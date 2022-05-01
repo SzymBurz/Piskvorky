@@ -26,17 +26,20 @@ public class Piskvorky {
     Set<Integer> playersPositions = new HashSet<>();
     Set<Integer> computerPositions = new HashSet<>();
 
-    public Piskvorky() {
+    public Integer computerMove() {
 
-    }
+        Integer pos = 0;
 
-    public void computerMove() {
-
-        for (Integer pos : positions) {
-            if(!playersPositions.contains(pos) && computerPositions.size() == playersPositions.size()) {
-                computerPositions.add(pos);
+        for (Integer a : positions) {
+            if(!playersPositions.contains(a) && !computerPositions.contains(a)) {
+                computerPositions.add(a);
+                System.out.println(computerPositions);
+                pos = a;
+                break;
             }
         }
+
+        return pos;
     }
 
     public void playersMove() {
@@ -44,16 +47,17 @@ public class Piskvorky {
         boolean endMove = false;
 
         while (!endMove) {
+            System.out.println("twój ruch");
             Scanner myInput = new Scanner(System.in);
             int a = myInput.nextInt();
             if (a > 0 && a < 10 && !computerPositions.contains(a)) {
                 playersPositions.add(a);
-                endMove = true;
+                return;
             }
         }
     }
 
-    public void summary(HashSet<Integer> set) {
+    public void summary(Set<Integer> set) {
 
         // winning scenarios
 
@@ -72,6 +76,7 @@ public class Piskvorky {
         } else if (set.size() == 5) {
             System.out.println("nobody has won!");
         }
+        System.out.println("summary" + set);
     }
 
     public boolean isFinishGame() {
