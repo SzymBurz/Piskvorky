@@ -9,3 +9,4 @@ public class SaleDto {
         this.isSold = isSold;
     }
 }
+

@@ -7,3 +7,4 @@ public class InformationService {
         System.out.println("halo halo, sprzedane");
     }
 }
+
