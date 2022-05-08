@@ -11,5 +11,6 @@ public class MovieStoreMain {
         System.out.println(movieStore.getMovies().entrySet().stream()
                 .flatMap(a -> a.getValue().stream())
                 .collect(Collectors.joining("!")));
+
     }
 }
