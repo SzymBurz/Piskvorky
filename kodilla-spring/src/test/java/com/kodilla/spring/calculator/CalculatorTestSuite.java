@@ -37,3 +37,4 @@ public class CalculatorTestSuite {
         assertEquals(1.0, res);
     }
 }
+
