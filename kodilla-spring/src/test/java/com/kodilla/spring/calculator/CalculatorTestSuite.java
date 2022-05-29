@@ -34,6 +34,6 @@ public class CalculatorTestSuite {
     @Test
     public void testDiv() {
         double res = calculator.div(2.0, 2.0);
-        assertEquals(0.0, res);
+        assertEquals(1.0, res);
     }
 }
